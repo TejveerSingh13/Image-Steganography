@@ -3,50 +3,70 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pickle
 
-# Function to find histogram
+# This function computes the histogram of an 8-bit image.
+"""
+Parameters:
+image (numpy.ndarray): An 8-bit grayscale image
+
+Returns:
+x (numpy.ndarray): An array of intensity values from 0 to 255
+intensities_array (numpy.ndarray): An array of the frequency of each intensity value
+"""
 def histogram_8bit(image):
     num_of_bins = 256
     intensities_array = np.zeros(num_of_bins)
     img_hei = image.shape[0]
     img_wid = image.shape[1]
     
+    # Iterate through each pixel in the image and increment the appropriate bin.
     for i in range(img_hei):
         for j in range(img_wid):
             pixel = image[i][j] 
-            intensities_array[pixel] += 1
-            
+            intensities_array[pixel] += 1  
+
     x = np.arange(num_of_bins)
 
     return x, intensities_array
 
-# Function to find Max numbers of bits that a specific channel can handle
+# This function takes an 8-bit cover image as input and returns the maximum number of bits that a specific channel can handle
+"""
+Parameters:
+    cover_image: an 8-bit numpy array representing the cover image
+"""
 def max_data(cover_image):
-    # 8-bit image verification
+    # It first verifies that the image is 8-bit and then finds the histogram of pixel intensities in the image
     if cover_image.dtype != "uint8":
         return -1
     intensities = histogram_8bit(cover_image)[1]
+    # It then finds the peak point of the histogram to determine the maximum number of bits that can be used for hiding data
     peak_point = np.argmax(intensities)
-    # print("Maximum number of bits for the given image is " + str(intensities[peak_point])) 
+    # The function returns this maximum number of bits
     return intensities[peak_point]
 
 # Function to encode data
+"""
+Parameters:
+    cover_image: an 8-bit numpy array representing the cover image
+    bit_stream: binary data to be encoded in the cover image
+"""
 def hide_data(cover_image, bit_stream):
-    """ Method to hide a bit stream in a 8-bit grayscale image """
     
-    # 8-bit image verification
+    # Verify if image is an 8-bit image
     if cover_image.dtype != "uint8":
         return -1
     
+    # Find the histogram of the cover image
     bins, intensities = histogram_8bit(cover_image)
+    # Find the peak point of the histogram
     peak_point = np.argmax(intensities) 
     
-    # Data stream size verification
+    # Verify if the bit stream can be embedded in the cover image
     size = len(bit_stream)
     if size > intensities[peak_point]:
         print("Bit stream is too long for this image")
         return -1
         
-    # Shifts right histogram values larger than peak_point by 1
+    # Shift right histogram values larger than the peak point by 1
     img_hei = cover_image.shape[0]
     img_wid = cover_image.shape[1]
     for i in range(img_hei):
@@ -59,7 +79,6 @@ def hide_data(cover_image, bit_stream):
     bit_count = 0
     for i in range(img_hei):
         for j in range(img_wid):
-            #print(bit_count)
             if bit_count < size:
                 if cover_image[i][j] == peak_point:
                     if bit_stream[bit_count] == '1':
@@ -70,17 +89,23 @@ def hide_data(cover_image, bit_stream):
     return cover_image, peak_point
 
 # Function to decode data
+"""
+Parameters:
+    cover_image: A numpy array representing an 8-bit grayscale image.
+    peak_point: An integer representing the peak point of the image's specific channel.
+    size: An integer representing the size of the encoded bit stream in a specific channel.
+"""
 def reveal_data(cover_image, peak_point, size):
-    """ Method to reveal a bit stream in a 8-bit grayscale image """
     
-    # 8-bit image verification
+    # Verify that the image is an 8-bit grayscale image
     if cover_image.dtype != "uint8":
         return -1    
+    # Compute the histogram of the cover image
     bins, intensities = histogram_8bit(cover_image)
     img_hei = cover_image.shape[0]
     img_wid = cover_image.shape[1]
     
-    # Get bit stream from image
+    # Extract the encoded bit stream from the cover image
     size = int(size)
     bit_count = 0
     bit_stream = []
@@ -106,6 +131,7 @@ def Image_Encoder(img_2_encr, txt_2_encr):
     img = cv2.imread(img_2_encr)
     r, g, b = cv2.split(img)
 
+    # Function to encode data in a channel
     def Encoder(data, size, xs, cover):
         content = data[size: size + xs]
         new_size = int(size+xs)
