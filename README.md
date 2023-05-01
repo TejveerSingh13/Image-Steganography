@@ -78,13 +78,14 @@ return : encoded image and enc_fre.pkl file which contains the data necesssary t
 #### 2. Decoding:
 parameters : encoded image and enc_fre.pkl file which contains the data necesssary to decode
 return : saves the decoded binary in a .txt file.
-#### 3. Capacity:
-parameters : Image you wish to use as a cover image in any format
-return : encoding capacity of the image in bit.
 
 ![image](https://user-images.githubusercontent.com/44855917/235496464-6e4c2349-6311-4206-a360-00f650d7961d.png)
 
 output of a successful encoding of binary text file into a cover image
+
+#### 3. Capacity:
+parameters : Image you wish to use as a cover image in any format
+return : encoding capacity of the image in bit.
 
 ![image](https://user-images.githubusercontent.com/44855917/235496635-7483c0db-aaed-48a1-8733-5dd93705975d.png)
 
