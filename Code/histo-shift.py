@@ -1,3 +1,7 @@
+"""
+Reference : https://github.com/vctrop/image_histogram_data_hiding
+For understanding concept and few parts
+"""
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np

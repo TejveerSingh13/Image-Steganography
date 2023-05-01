@@ -1,3 +1,7 @@
+"""
+Reference : https://www.techiedelight.com/huffman-coding
+For understanding concept and few parts
+"""
 import heapq
 from heapq import heappop, heappush
 import sys
@@ -187,7 +191,7 @@ if __name__ == '__main__':
 		with open('deco-txt.txt', 'w') as decoded:
 			decoded.write(deco_data)
 		print(' Data Decoded and saved in .txt file! ')
-		
+
 	else:
 		print("Please Enter a valid input!!")
 		
