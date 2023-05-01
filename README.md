@@ -13,6 +13,9 @@ In this version of the project, several enhancements have been made to improve i
 
 These changes enhance the overall functionality and efficiency of the project, making it more versatile and user-friendly.nary
 
+## Demo Video
+YouTube : https://youtu.be/BuLFBSFdZBw
+
 ## Project Structure
 The ./Code directory contains the actual working code for the Huffman Encoding and Compression algorithm. This is the core of the project, and is responsible for encoding and compressing data.
 
