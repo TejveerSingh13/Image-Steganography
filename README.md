@@ -56,10 +56,12 @@ Overall, the huffman.py file is a crucial component of this project, responsible
 huffman.py on execution gives us two options:
 #### 1. Encoding:
 parameters : the text file containig the secret message that needs to be encoded.
+
 return : saves the encoded binary in a .txt file and also saves the frequency table which is needed for decoding.
 #### 2. Decoding:
 parameters : the encoded binary in a .txt file and the frequency table which is needed for decoding.
-return : saves the encoded binary in a .txt file and also saves the frequency table which is needed for decoding.
+
+return :saves the decoded data in a (.txt) file.
 
 ![image](https://user-images.githubusercontent.com/44855917/235492143-15c4c687-53b9-42fc-b099-20376f66dd69.png)
 
@@ -74,9 +76,11 @@ Overall, the histo-shift.py file is a key component of this project, responsible
 histo-shift.py on execution gives us three options:
 #### 1. Encoding:
 parameters : the text file containig the binary string that needs to be encoded and the cover image.
+
 return : encoded image and enc_fre.pkl file which contains the data necesssary to decode
 #### 2. Decoding:
 parameters : encoded image and enc_fre.pkl file which contains the data necesssary to decode
+
 return : saves the decoded binary in a .txt file.
 
 ![image](https://user-images.githubusercontent.com/44855917/235496464-6e4c2349-6311-4206-a360-00f650d7961d.png)
@@ -85,6 +89,7 @@ output of a successful encoding of binary text file into a cover image
 
 #### 3. Capacity:
 parameters : Image you wish to use as a cover image in any format
+
 return : encoding capacity of the image in bit.
 
 ![image](https://user-images.githubusercontent.com/44855917/235496635-7483c0db-aaed-48a1-8733-5dd93705975d.png)
