@@ -1,0 +1,43 @@
+Final Project - Description
+Final Project Description
+
+Project Goal:  The goal is to create a tool for cybersecurity operations, analysis, or security awareness training.  Cybersecurity professionals should be able to use this tool, and as such, must be fully professional, with appropriate help screens.  If mirroring a tool that already exists, you must add some significant value to some portion of the tool. You can use C, C++, Java, python, ruby, bash, PowerShell, etc. or any other languages should be documented and then approved in your proposal. This tool must be specifically developed for this course, and submitting a project used for other courses is considered plagiarism. The tool must have significant novel contributions that differentiate it from any other existing tool. Submitting somebody else's work or submitting a project with minor modifications to an existing code is not acceptable as a final project.
+
+Tool Operations:  The tool must work on either (or at least) Kali Linux 2020.2 or higher or Windows 10 or higher.  It must have a setup file that requires only a single command or double click.  All required libraries or dependencies must be included in the installation folder (not requiring an internet connection).  It may be a command-line interface tool or a graphical tool.  If a command-line tool, you should document the switches in a standard way (like –help or -? etc.) Both source code and executable object code must be submitted.  It may be a front end to an existing tool but it must add something valuable to the operations.
+
+You may use hardware like raspberry pi, but forewarning: Hardware often depends on drivers, which are not always available on all mobile platforms. If you are trying to capture wireless data, you must have a network card that can be put in “promiscuous” mode. If you put in a full effort and have a roadblock like a network card or a configuration that is “broken” by patches, of a website that stops letting you scrape it, etc., all is not lost! Turn your presentation into a detailed lesson learned…sometimes failure after a lot of effort is worth more than success.
+
+Refer to the [*] Choosing Potential Final Project Topic: Start here for some project directions and ideas.
+
+What you need to deliver:
+
+First, a Proposal:  Your proposal must describe the goal of the project, the gap that it addresses, specifications (programming language, OS, other parameters), milestones, and timelines. It should also provide a basic "storyboard" of at least one use case.  (Python, Ruby, C++, C, Java, bash script, web server, mysql database…others require approval).
+
+Use this template Download this templatefor your proposal. 
+
+ 
+
+For the Final Project Submission, you need to deliver the following items:
+
+Video: You must take a 5-minute video demonstrating cool parts of your project working, demonstrating menus and help etc.  Upload to youtube or any other video platform for viewing. Add the link to your Readme.txt and also submit it using the given submission link on Canvas. Just an amateur phone video is probably ok if you can see the product.
+
+Readme.txt:  You will have a readme.txt file that clearly gives a program description, setup directions, usage, and appropriate examples.  Also, document major components/ideas from other sources' e.g, this project extends the existing nmap code (found at yyyy), or the primary idea for this tool comes from the zzz Project.
+
+Screenshots.pdf: You will have a .pdf formatted file with screenshots of your major program components
+
+Your own work:  This tool must be specifically developed for this course, and submitting a project used for other courses is considered plagiarism. The tool must have significant novel contributions that differentiate it from any other existing tool. Submitting somebody else's work or submitting a project with minor modifications to an existing code is not acceptable as a final project. While you can certainly take ideas from books, online sources, or existing tools, you MUST document any component that uses more than two consecutive lines of code or commenting/documentation from someone/something else (other than included libraries).  Documents where you got it from in both code comments and major components in the Readme.txt (and inline comments if applicable). 
+
+ 
+
+Grading Rubric (100 points):
+
+Final Project Proposal - Must be submitted by the designated deadline - Separate submission link
+Proposal: 10 points
+Final Project Submission - submit everything except proposal and video using this submission link
+Presentation Video: 10 points - Separate submission link. 
+Program Operations (Does it work as expected): 40 points
+Non-functional or dysfunctional code could impact other grading items like cybersecurity value.
+Professional Program (look and usage): 10 points
+Cybersecurity Value: 10 points
+Documentation: 10 points
+Ease of installation/setup (or enough directions to repeat setup): 10 points
