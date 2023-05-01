@@ -188,3 +188,6 @@ if __name__ == '__main__':
 			decoded.write(deco_data)
 		print(' Data Decoded and saved in .txt file! ')
 		
+	else:
+		print("Please Enter a valid input!!")
+		

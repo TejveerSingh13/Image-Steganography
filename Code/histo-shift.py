@@ -233,7 +233,7 @@ def Image_Decoder(encr_img, encr_data):
     print("Image Decoded!")
 
 def main():
-    process = input(" Enter 1 for Encoding Enter 2 for Decoding : ")
+    process = input(" Enter 1 for Encoding, Enter 2 for Decoding and 3 to check capacity of Cover Image : ")
     if process == '1':
         img = input(" Enter cover image name in .png format : ")
         text = input(" Enter text file with the binary encrypted data in .txt format : ")
@@ -242,6 +242,17 @@ def main():
         img = input(" Enter name of image to be decoded in .png format : ")
         text = input(" Enter file with the binary encrypted data in .pkl format : ")
         Image_Decoder(img, text)
+    elif process =='3':
+        img = input(" Enter name of cover image in .png format : ")
+        img_c = cv2.imread(img)
+        r, g, b = cv2.split(img_c)
+        rs = int(max_data(r))
+        gs = int(max_data(g))
+        bs = int(max_data(b))
+        limit =  rs+gs+bs
+        print("The maximum data encoded in the image is",limit)
+    else:
+        print("Please Enter a valid input!!")
 
 
 if __name__ == "__main__":
